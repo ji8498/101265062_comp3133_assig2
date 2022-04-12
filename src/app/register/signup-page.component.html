@@ -1,0 +1,35 @@
+<div class="content" role="main">
+
+  <!-- Login -->
+  <h2>Sign up</h2>
+  <div class="container-form">
+
+      <label for="id">ID</label>
+      <input #id type="text" id="id" name="id" placeholder="desired ID">
+
+      <label for="email">Email Address</label>
+      <input #email type="text" id="email" name="email" placeholder="Your email address..">
+
+      <label for="password">Password</label>
+      <input #password type="text" id="password" name="password" placeholder="Must have capital, a number and a special character">
+
+      <label for="fname">First Name</label>
+      <input #firstname type="text" id="fname" name="firstname" placeholder="first name..">
+
+      <label for="lname">Last Name</label>
+      <input #lastname type="text" id="lname" name="lastname" placeholder="last name..">
+
+      <button
+      (click)="create(id.value, email.value, firstname.value, lastname.value, password.value)">
+      Create Account
+    </button>
+  </div>
+  <br/>
+  <a routerLink="/" routerLinkActive="active">Returning user?</a>
+  <!-- Footer -->
+  <footer>
+
+  </footer>
+</div>
+
+

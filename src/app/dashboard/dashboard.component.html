@@ -1,0 +1,55 @@
+<div class="content" role="main">
+  <header class="navbar" role="banner">
+  <button type="button" class="btn btn-outline-dark navSearch">
+    <i class="fas fa-search"></i>
+  </button></header>
+  <div class="container">
+    <div class="card shadow my-5">
+      <h4 class="card-header"><strong>Hotels</strong></h4>
+      <div class="card-body">
+        <ul>
+          <li *ngFor="let hotel of hotels | async">
+            <button id="click_cell" (click)="onSelect(hotel)">
+              <!-- "{{ hotel.hotel_id }}", -->
+              <div id="info">
+                <div>
+                  <h2 class="stylings"><strong>{{ hotel.hotel_name }}</strong></h2>
+                  <br />
+                </div>
+                <div>
+                  <h6 class="stylings">
+                    {{ hotel.city }}, {{ hotel.street }},
+                    {{ hotel.postal_code }}
+                  </h6>
+                  <br />
+                </div>
+                <div>
+                  <h4 class="stylings">${{ hotel.price }}</h4>
+                  <br />
+                </div>
+                <h5 class="stylings">Contact: {{ hotel.email }}</h5>
+                <br />
+                <div class="btn-group btn-group-sm" role="group">
+                  <button type="button" class="btn btn-outline-dark">
+                    <strong>Book</strong>
+                  </button>
+                  <button type="button" class="btn btn-outline-dark">
+                    <i class="fas fa-bookmark"></i>
+                  </button>
+                  <button routerLink="/booking-page" routerLinkActive="active" type="button" class="btn btn-outline-dark">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+              <div
+              *ngIf="hotel['hotel_id'] === selectedHotel['hotel_id']"
+              ></div>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="card-footer"></div>
+    </div>
+  </div>
+</div>
+
